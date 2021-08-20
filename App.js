@@ -1,21 +1,14 @@
 import React, {Fragment} from 'react';
-import {SafeAreaView, StyleSheet, ScrollView, StatusBar} from 'react-native';
+import {SafeAreaView, StyleSheet, ScrollView} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
-
-import {MainPage} from './src/MainPage';
+import MainStackNavigator from './src/navigators/MainStackNavigator';
 
 const App = () => {
   return (
-    <Fragment>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <MainPage />
-        </ScrollView>
-      </SafeAreaView>
-    </Fragment>
+    <NavigationContainer>
+      <MainStackNavigator/>
+    </NavigationContainer>
   );
 };
 

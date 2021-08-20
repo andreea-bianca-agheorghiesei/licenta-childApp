@@ -55,6 +55,7 @@ export const withLocationPermissions = Component => {
         <Component
           locationPermissionGranted={this.state.locationPermissionGranted}
           requestLocationPermission={this.requestLocationPermission}
+          params={this.props.route.params}
         />
       );
     }
