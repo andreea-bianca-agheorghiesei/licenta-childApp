@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import MainScreen from '../screens/HomeScreen';
+import HomeScreen from '../screens/HomeScreen';
 import TokenRegister from '../screens/TokenRegisterScreen';
 
 const MainStack = createStackNavigator();

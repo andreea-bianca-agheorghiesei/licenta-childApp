@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 })
 const TokenRegisterScreen = ({navigation}) =>
 { 
-    const [token, setToken] = React.useState('BvDkZ0');
+    const [token, setToken] = React.useState('okXi2v');
     
     const sendToken = () => {
     console.log('token' , token)
@@ -83,9 +83,9 @@ const TokenRegisterScreen = ({navigation}) =>
             <TextInput style={styles.textInput} 
                        placeholder='Cod' 
                        onChangeText={setToken}
-                       value = {'BvDkZ0'}
+                       value = {'okXi2v'}
                        border="#000000"/>
-            <TouchableOpacity style={styles.button}  onPress = {()=> sendToken()}>
+            <TouchableOpacity style={styles.button}  onPress = {()=> sendToken(token)}>
                 <Text style={styles.buttonText}>Connect</Text>
             </TouchableOpacity>     
         </View>

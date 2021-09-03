@@ -93,9 +93,6 @@ const getLocationUpdates = () => {
           latitude : position.coords.latitude,
           longitude: position.coords.longitude
       });
-    //   console.log(location);
-    //   //console.log('sending current location...');
-    //   sendCurrentLocation();
     },
     (error) => {
         setPosition(null);
@@ -107,11 +104,10 @@ const getLocationUpdates = () => {
           ios: 'best',
         },
         enableHighAccuracy: true,
-        distanceFilter: 0,
+        distanceFilter: 10,
         interval: 5000,
         fastestInterval: 2000,
         forceRequestLocation: true,
-        forceLocationManager: true,
         showLocationDialog: true, 
     },
   )
@@ -130,7 +126,7 @@ const sendCurrentLocation = () => {
   if(location.latitude !== null && location.longitude !== null) { 
     axios.put(`${BASE_URL}/sendLocation`,
       {
-        coordinates: [location.latitude, location.longitude],
+        coordinates: [location.longitude, location.latitude],
       },
       {
         headers: {"x-access-token" : JWTtoken}
@@ -172,7 +168,7 @@ const onEnableLocationPress =  () => {
 }
 
 const HomeScreen = withLocationPermissions(HomeComponent);
-export default MainScreen;
+export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
